@@ -8,7 +8,7 @@ const Navigation = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-secondary-foreground/10 bg-secondary backdrop-blur supports-[backdrop-filter]:bg-secondary/95">
+    <header className="sticky top-0 z-50 w-full border-b border-border/20 bg-gray-100/95 backdrop-blur supports-[backdrop-filter]:bg-gray-100/90">
       <nav className="container mx-auto flex h-16 items-center justify-between px-4">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 hover:opacity-90 transition-opacity">
@@ -17,23 +17,23 @@ const Navigation = () => {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8">
-          <Link to="/explore" className="text-sm font-medium text-secondary-foreground hover:text-accent transition-colors">
+          <Link to="/explore" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
             Explore Projects
           </Link>
-          <Link to="/create" className="text-sm font-medium text-secondary-foreground hover:text-accent transition-colors">
+          <Link to="/create" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
             Start a Project
           </Link>
-          <Link to="/how-it-works" className="text-sm font-medium text-secondary-foreground hover:text-accent transition-colors">
+          <Link to="/how-it-works" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
             How It Works
           </Link>
         </div>
 
         {/* Desktop Actions */}
         <div className="hidden md:flex items-center gap-4">
-          <Button variant="ghost" size="icon" className="text-secondary-foreground hover:text-accent">
+          <Button variant="ghost" size="icon" className="text-foreground hover:text-primary">
             <Search className="h-5 w-5" />
           </Button>
-          <Button variant="outline" className="text-secondary-foreground border-secondary-foreground/30 hover:bg-secondary-foreground/10">Sign In</Button>
+          <Button variant="outline">Sign In</Button>
           <Button className="bg-accent text-accent-foreground hover:bg-accent/90">Start a Project</Button>
         </div>
 
@@ -41,7 +41,7 @@ const Navigation = () => {
         <Button
           variant="ghost"
           size="icon"
-          className="md:hidden text-secondary-foreground hover:text-accent"
+          className="md:hidden text-foreground hover:text-primary"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -50,31 +50,31 @@ const Navigation = () => {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-t border-secondary-foreground/10 bg-secondary animate-slide-up">
+        <div className="md:hidden border-t border-border/20 bg-gray-100 animate-slide-up">
           <div className="container mx-auto px-4 py-4 space-y-4">
             <Link
               to="/explore"
-              className="block py-2 text-sm font-medium text-secondary-foreground hover:text-accent transition-colors"
+              className="block py-2 text-sm font-medium text-foreground hover:text-primary transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
               Explore Projects
             </Link>
             <Link
               to="/create"
-              className="block py-2 text-sm font-medium text-secondary-foreground hover:text-accent transition-colors"
+              className="block py-2 text-sm font-medium text-foreground hover:text-primary transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
               Start a Project
             </Link>
             <Link
               to="/how-it-works"
-              className="block py-2 text-sm font-medium text-secondary-foreground hover:text-accent transition-colors"
+              className="block py-2 text-sm font-medium text-foreground hover:text-primary transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
               How It Works
             </Link>
             <div className="pt-4 space-y-2">
-              <Button variant="outline" className="w-full text-secondary-foreground border-secondary-foreground/30 hover:bg-secondary-foreground/10">
+              <Button variant="outline" className="w-full">
                 Sign In
               </Button>
               <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90">Start a Project</Button>
